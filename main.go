@@ -1,8 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
 
-	fmt.Println("bismillah walhamdulillah")
+	log.Println("bismillah walhamdulillah")
+	http.Handle("/", http.FileServer(http.Dir("./static")))
+	log.Println("listening on port 8000...")
+	http.ListenAndServe(":8000", nil)
+
 }
