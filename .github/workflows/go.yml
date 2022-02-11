@@ -33,6 +33,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push
+      # it will use Dockerfile we've defined
       id: docker_build
       uses: docker/build-push-action@v2
       with:
